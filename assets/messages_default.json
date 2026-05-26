@@ -1,0 +1,121 @@
+{
+  "saudacao": "*TMD TI* 🤖\n\nOlá! Sou o assistente virtual da TMD TI.\n\nSeja bem-vindo ao suporte. Escolha uma das *opções* para iniciar o atendimento:",
+  "button": {
+    "button_default": {
+      "id": "btn_menu",
+      "title": "Iniciar Atendimento"
+    },
+    "button_menu_default": [
+      {
+        "id": "btn_novo_chamado",
+        "title": "Abrir novo chamado"
+      },
+      {
+        "id": "btn_chamados_abertos",
+        "title": "Chamados abertos"
+      }
+    ],
+    "button_buscar_chamado": [
+      {
+        "id": "btn_chamados_abertos",
+        "title": "Chamados Abertos"
+      },
+      {
+        "id": "btn_menu",
+        "title": "Voltar ao menu"
+      }
+    ],
+    "button_voltar_menu": {
+      "id": "btn_menu",
+      "title": "Voltar ao menu"
+    },
+    "button_detalhes": [
+      {
+        "id": "btn_detalhar_chamado",
+        "title": "Ver Detalhes"
+      },
+      {
+        "id": "btn_menu",
+        "title": "Voltar ao menu"
+      }
+    ],
+    "button_baixar_anexos": {
+      "id": "btn_baixar_anexos",
+      "title": "Deseja baixar os anexos?"
+    },
+    "button_cancelar": {
+      "id": "btn_cancelar_atendimento",
+      "title": "Cancelar"
+    },
+    "button_confirmar": {
+      "id": "btn_confirmar_chamado",
+      "title": "Confirmar"
+    },
+    "button_termo_aceito": {
+      "id": "btn_aceitar_termos",
+      "title": "Aceitar"
+    },
+    "button_termo_recusado": {
+      "id": "btn_recusar_termos",
+      "title": "Recusar"
+    },
+    "button_pular": {
+      "id": "btn_pular_anexo",
+      "title": "Pular"
+    }
+  },
+  "mensagens": {
+    "solicitando_nome": "*TMD TI* ✅\nNovo Chamado - *Nome Completo*\n\nPara abrir um chamado, preciso de algumas informações. Primeiro, informe seu - *NOME COMPLETO*:\n\nCaso deseja cancelar esta solicitação, digite *CANCELAR* em qualquer etapa.",
+    "solicitando_area": "*TMD TI* 🏢\nNovo Chamado - *Área/Departamento*\n\nObrigado! Agora, por favor, informe sua *ÁREA/DEPARTAMENTO*:",
+    "solicitando_matricula": "*TMD TI* 🆔\nNovo Chamado - *Matrícula*\n\nPerfeito! Agora, por favor, informe a sua *MATRÍCULA*:",
+    "solicitando_categoria": "*TMD TI* 📂\nNovo Chamado - *Categoria*\n\nSelecione a *CATEGORIA* do chamado:",
+    "solicitando_descricao": "*TMD TI*📝\nNovo Chamado - *Detalhes do chamado*\n\nOk! Agora, descreva *DETALHADAMENTE* o problema ou solicitação (quanto mais detalhes, melhor):",
+    "solicitando_numero_chamado": "*TMD TI* 🔎\n\nDigite o *NÚMERO DO CHAMADO* para verificar o status:",
+    "solicitando_anexo": "*TMD TI* 📎\n\nDeseja anexar uma *IMAGEM*?, envie uma *IMAGEM* ou *PRINT* que ajude a ilustrar o problema. Caso não tenha, digite *PULAR* para continuar.",
+    "solicitando_cancelar": "*TMD TI* ❌\n\nAtendimento cancelado. Deseja um novo atendimento?.",
+    "chamado_resumo": "*TMD TI* - Resumo do Chamado 📝\n\nConfira os dados do seu chamado:\n\nNome: {nome}\nÁrea: {area}\nMatrícula: {matricula}\nCategoria: {categoria}\nDescrição: {descricao}\n\nSe estiver tudo correto, digite *CONFIRMAR* para abrir o chamado, ou *CANCELAR* para abortar.",
+    "chamado_sucesso": "*TMD TI* ✅\n\nChamado aberto com sucesso!\n\nResumo:\nNome: {nome}\nÁrea: {area}\nMatrícula: {matricula}\nDescrição: {descricao}\n\nNúmero do chamado: #{numero}\n\nAcompanhe atualizações pelo chat — estamos à disposição.",
+    "status_chamado": "*TMD TI* 🔔\n\nStatus do chamado #{numero}: Em andamento ✅\nÚltima atualização: nossa equipe técnica está analisando o caso. Em breve retornaremos com novidades.",
+    "chamados_abertos": "*TMD TI* 📋\n\nSeus chamados abertos:\n\n• #1234 - Problema com acesso ao sistema [Em andamento]\n• #5678 - Impressora não imprime [Aguardando peças]\n• #9012 - Software com erro [Em análise]\n\nSe quiser abrir um novo chamado, selecione *Abrir novo chamado*.",
+    "nao_entendi": "*TMD TI* 🤖\n\nDesculpe — não entendi sua mensagem.\n\nPara iniciar o atendimento, digite *iniciar* ou escolha *Iniciar Atendimento* no menu.",
+    "erro_generico": "*TMD TI* ⚠️\n\nOcorreu um erro ao processar sua solicitação. Tente novamente mais tarde ou contate o suporte.",
+    "termos_uso": "*TMD TI* 🔒 - Termos de uso\n\nAntes de abrir o chamado, por favor aceite os termos de uso. Deseja prosseguir?",
+    "termos_recusados": "*TMD TI* ❌\n\nVocê recusou os termos de uso. Não será possível abrir um chamado sem a aceitação.\n\nSe mudar de ideia, digite *iniciar* para começar novamente.",
+    "erro_servidor": "❌ Erro ao comunicar com o servidor. Deseja tentar novamente?"
+  },
+  "interactive_categoria": {
+    "button": "Selecionar",
+    "sections": [
+      {
+        "title": "Tipo de chamado",
+        "rows": [
+          {
+            "id": "tipo_problema",
+            "title": "Problema"
+          },
+          {
+            "id": "tipo_solicitacao",
+            "title": "Solicitação"
+          },
+          {
+            "id": "tipo_informacoes",
+            "title": "Informações"
+          }
+        ]
+      }
+    ]
+  },
+  "interactive_chamados": {
+    "type": "list",
+    "body": "Selecione o chamado que você deseja ter mais detalhes:",
+    "button": "Selecionar Chamado",
+    "section": {
+      "title": "Seus Chamados Abertos",
+      "rows_template": {
+        "id": "dynamic",
+        "title": "Chamado #{codigo}",
+        "description": "{assunto}..."
+      }
+    }
+  }
+}
