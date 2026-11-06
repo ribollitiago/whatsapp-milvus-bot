@@ -1,18 +1,29 @@
-# whatsapp-milvus-bot
+# WhatsApp Milvus Bot 🤖
 
-Production-ready WhatsApp Business API bot integrated with the Milvus IT service desk — automates ticket creation, status lookup, and support flows via chat.
+An enterprise integration service connecting the **WhatsApp Business API** with the **Milvus IT Service Desk Platform**, automating ticket lifecycles and support workflows directly via messaging.
+
+---
+
+## Architecture & Workflow
+
+```
+WhatsApp User ──> WhatsApp Webhook / API ──> Message Handler ──> Session Manager
+                                                                      │
+                                                                      ▼
+                                                                Milvus Client API
+                                                                      │
+                                                            (Create/Query Tickets)
+```
 
 ---
 
 ## Features
 
-- 🎫 **Automated ticket opening** — users can open IT support tickets directly through WhatsApp
-- 🔍 **Ticket status lookup** — query open tickets and retrieve details without human intervention
-- 📋 **Main menu flow** — guided conversation menu to route users to the right action
-- 🔄 **Session management** — tracks user conversation state across interactions
-- 📎 **Media support** — send media files via WhatsApp as part of automated responses
-- 🔗 **Milvus integration** — communicates with the Milvus API to manage service desk operations
-- 🌐 **ngrok tunnel** — exposes the local webhook endpoint for WhatsApp API callbacks
+- **Automated Ticket Creation** — Guides users step-by-step to log IT support incidents and service requests directly in Milvus.
+- **Ticket Status & Inquiries** — Query open tickets, examine statuses, and read technician updates in real time.
+- **Session Management** — In-memory session tracking ensuring stateful multi-step conversational flows per phone number.
+- **Attachment & Media Support** — Processes and forwards screenshots and documents directly into the corresponding Milvus tickets.
+- **Webhook Gateway** — Node.js service handling incoming WhatsApp webhook events with signature and payload validation.
 
 ---
 
@@ -21,68 +32,52 @@ Production-ready WhatsApp Business API bot integrated with the Milvus IT service
 | Layer | Technology |
 |---|---|
 | Runtime | Node.js |
-| WhatsApp API | WhatsApp Business API (via HTTP) |
-| Service Desk | Milvus API |
-| Tunnel | ngrok |
-| Session State | In-memory session manager |
-
----
-
-## Project Structure
-
-```
-├── index.js                        # Entry point — HTTP server & webhook receiver
-├── handlers/
-│   └── messageHandler.js           # Routes incoming messages to the correct flow
-├── scripts/
-│   ├── menu-principal.js           # Main menu conversation flow
-│   ├── abertura-chamado.js         # Ticket creation flow
-│   └── chamados-abertos/
-│       ├── chamado-service.js      # Open tickets service layer
-│       ├── detalhes-chamado.js     # Ticket details retrieval
-│       └── fluxo-busca.js          # Ticket search conversation flow
-├── services/
-│   ├── milvusClient.js             # Milvus API client
-│   ├── whatsappClient.js           # WhatsApp API client
-│   └── sendMediaViaWhatsapp.js     # Media sending service
-├── utils/
-│   └── sessionManager.js          # User session state tracking
-└── assets/
-    └── messages_default.json       # Default message templates
-```
+| Messaging API | WhatsApp Cloud / Business API |
+| Service Desk Integration | Milvus REST Client |
+| Local Tunneling (Dev) | ngrok integration |
 
 ---
 
 ## Getting Started
 
+### Prerequisites
+
+- Node.js (v18+)
+- Active WhatsApp Business API developer credentials
+- Milvus Service Desk API access key & base URL
+
+### Installation
+
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/ribollitiago/whatsapp-milvus-bot.git
 cd whatsapp-milvus-bot
 
 # Install dependencies
 npm install
-
-# Configure environment variables
-# Create a .env file with:
-# WHATSAPP_TOKEN=...
-# WHATSAPP_PHONE_NUMBER_ID=...
-# MILVUS_API_URL=...
-# MILVUS_API_TOKEN=...
-# VERIFY_TOKEN=...       # Webhook verification token
-
-# Start ngrok tunnel (exposes port to WhatsApp webhook)
-ngrok http 3000
-
-# Start the bot
-npm start
 ```
 
-> **Note:** Register your ngrok HTTPS URL as the webhook endpoint in your WhatsApp Business API configuration before running.
+### Configuration
+
+Create a `.env` file in the root directory:
+
+```env
+WHATSAPP_TOKEN=your_whatsapp_token
+WHATSAPP_PHONE_NUMBER_ID=your_phone_number_id
+MILVUS_API_URL=https://api.milvus.com.br
+MILVUS_API_TOKEN=your_milvus_token
+PORT=3000
+```
+
+### Run
+
+```bash
+node index.js
+```
 
 ---
 
 ## Author
 
 **Tiago Ribolli Blasquez**  
-[linkedin.com/in/tiagoribolli](https://www.linkedin.com/in/tiago-ribolli-blasquez-060810244) · [github.com/ribollitiago](https://github.com/ribollitiago)
+[linkedin.com/in/tiagoribolli](https://linkedin.com/in/tiago-ribolli-blasquez-060810244) · [github.com/ribollitiago](https://github.com/ribollitiago)
